@@ -80,8 +80,9 @@ export const DescriptionText = styled.div`
 
 export const ButtonContainer = styled.div`
     width: 100%;
+`
 
-    > button{
+export const JoinUS =styled.button`
         width: 339px;
         height: 86px;
         border-radius: 54px;
@@ -97,5 +98,4 @@ export const ButtonContainer = styled.div`
             background: #D95B5B;
             color: white;
         }
-    }
 `

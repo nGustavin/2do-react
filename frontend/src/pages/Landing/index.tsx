@@ -1,8 +1,9 @@
 import React from 'react';
 import background from '../../assets/landing/background.svg'
 import logo from '../../assets/landing/logo.svg'
+import {Link} from 'react-router-dom'
 
-import { Container, SideContent, MenuBar, TitleText, DescriptionText, ButtonContainer } from './styles';
+import { JoinUS, Container, SideContent, MenuBar, TitleText, DescriptionText, ButtonContainer } from './styles';
 
 const Landing: React.FC = () => {
   return (
@@ -23,7 +24,9 @@ const Landing: React.FC = () => {
                   <h4>For everything you need</h4>
               </DescriptionText>
               <ButtonContainer>
-                <button type="submit">Join us</button>
+                <Link to="/home">
+                    <JoinUS type="submit" id="joinButton">Join us</JoinUS>
+                </Link>
               </ButtonContainer>
           </SideContent>
           <img src={background} alt="landing background"/>
