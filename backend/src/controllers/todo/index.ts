@@ -31,3 +31,7 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
         throw error
     }
 }
+
+const updateTodo = async (req: Request, res: Response): Promise<void> => {
+    
+}
