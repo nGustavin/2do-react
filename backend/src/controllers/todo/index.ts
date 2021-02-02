@@ -12,5 +12,22 @@ const getTodos = async (req: Request, res: Response): Promise<void> => {
 }
 
 const addTodo = async (req: Request, res: Response): Promise<void> => {
-    
+    try {
+        const body = req.body as Pick<ITodo, "name" | "description" | "status"> 
+        
+        const todo: ITodo = new Todo({
+            name: body.name,
+            description: body.description,
+            status: body.status,
+        })
+
+        const newTodo: ITodo = await todo.save()
+        const allTodos: ITodo[] = await Todo.find()
+
+        res
+            .status(201)
+            .json({message: "Todo added", todo: newTodo, todos: allTodos})
+    } catch (error) {
+        throw error
+    }
 }
